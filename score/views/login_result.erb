@@ -1,0 +1,27 @@
+<% n = 0 %>
+全部及格成绩：<br>
+<% @grade_array.each do |m| %>
+  <table border="1" width = "690">
+    <tr>
+      <% if n == 0 %>
+        <table border="1" width = "690"><tr>
+        <td width = "290" align="center">课程名</td>
+        <td width = "100" align="center">课程属性</td>
+        <td width = "100" align="center">学分</td>
+        <td width = "100" align="center">成绩</td>
+        <td width = "100" align="center">绩点</td></tr>
+      <% end %>
+      <td width = "290" align="center"><%=m.get_sub %></td>
+      <td width = "100" align="center"><%=m.get_type %></td>
+      <td width = "100" align="center"><%=m.get_xuefen %></td>
+      <td width = "100" align="center"><%=m.get_grade %></td>
+      <td width = "100" align="center"><%=m.get_gradepoint.to_f.round(1) %></td>
+    </tr>
+  </table>
+  <% n = 1 %>
+<% end %><br>
+<% if @type != 1 %>
+  <input type="button" value="点击显示绩点" onclick="location.href='gradepoint'" method="POST">
+<% else %>
+  总绩点：<%=@gradepoint%>
+<% end %>
