@@ -76,11 +76,11 @@ post '/' do
         if g_ == "优秀"
           gradepoint = 5
         elsif g_ == "良好"
-          gradepoint = 4
+          gradepoint = 4.5
         elsif g_ == "中等"
-          gradepoint = 3
+          gradepoint = 3.5
         elsif g_ == "及格"
-          gradepoint = 2
+          gradepoint = 2.5
         else
           gradepoint = 0
         end
